@@ -1,4 +1,4 @@
-# Add cache (Squid) as proxy to apt
+# perform update, upgrade and clean up 
 apt-get update
 apt-get -y upgrade
 apt-get -y dist-upgrade
