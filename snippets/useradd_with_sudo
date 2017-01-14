@@ -1,0 +1,9 @@
+# create user as admin with default password
+USER="robbie"
+ADMIN_GROUP="sudo"
+KEY_URL="http://172.16.0.9/cobbler/pub/robbie_id_rsa.pub"
+/usr/sbin/useradd -m -U -G ${ADMIN_GROUP} -s /bin/bash -p '$default_password_crypted' ${USER}
+/bin/mkdir -p /home/${USER}/.ssh
+/usr/bin/wget --output-document=/home/${USER}/.ssh/authorized_keys ${KEY_URL}
+/bin/chown -R ${USER}:${USER} /home/${USER}/.ssh/
+/bin/chmod 600 /home/${USER}/.ssh/authorized_keys

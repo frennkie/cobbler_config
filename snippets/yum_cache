@@ -1,0 +1,7 @@
+# Add cache (Squid) as proxy to yum
+echo "proxy=http://172.16.0.2:3128/" >> /etc/yum.conf
+
+# Disable mirror to avoid different mirrors being used for each request
+sed -i 's/^#baseurl/baseurl/' /etc/yum.repos.d/*
+sed -i 's/^mirrorlist/#mirrorlist/' /etc/yum.repos.d/*
+sed -i 's/^enabled=1/enabled=0/' /etc/yum/pluginconf.d/fastestmirror.conf

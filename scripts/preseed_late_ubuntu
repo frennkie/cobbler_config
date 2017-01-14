@@ -1,0 +1,12 @@
+# Start preseed_late_ubuntu
+# This script runs in the chroot /target by default
+$SNIPPET('post_install_network_config_deb')
+$SNIPPET('late_apt_repo_config')
+$SNIPPET('post_run_deb')
+$SNIPPET('download_config_files')
+$SNIPPET('useradd_with_sudo')
+$SNIPPET('apt_proxy')
+$SNIPPET('apt_sources_list_ubuntu')
+$SNIPPET('apt_update_upgrade')
+$SNIPPET('kickstart_done')
+# End preseed_late_ubuntu

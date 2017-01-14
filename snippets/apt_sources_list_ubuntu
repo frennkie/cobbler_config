@@ -1,0 +1,9 @@
+# start apt_sources_list_ubuntu
+cat<<EOF>/etc/apt/sources.list
+deb http://de.archive.ubuntu.com/ubuntu $os_version main restricted universe multiverse
+deb http://de.archive.ubuntu.com/ubuntu $os_version-updates main restricted universe multiverse
+deb http://de.archive.ubuntu.com/ubuntu $os_version-security main restricted universe multiverse
+deb http://de.archive.ubuntu.com/ubuntu $os_version-backports main restricted universe multiverse
+
+EOF
+# end apt_sources_list_ubuntu

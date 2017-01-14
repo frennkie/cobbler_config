@@ -1,0 +1,2 @@
+# Add cache (Squid) as proxy to apt
+echo "Acquire::http::Proxy \"http://172.16.0.2:3128\";" >> /etc/apt/apt.conf.d/10proxy

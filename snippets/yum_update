@@ -1,0 +1,2 @@
+# Perform yum update
+yum update -y
