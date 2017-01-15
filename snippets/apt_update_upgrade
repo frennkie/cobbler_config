@@ -1,6 +1,8 @@
 # perform update, upgrade and clean up 
 apt-get update
-apt-get -y upgrade
-apt-get -y dist-upgrade
+# apt-get -y upgrade
+timeout 5m apt-get upgrade -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew"
+# apt-get -y dist-upgrade
+timeout 5m apt-get dist-upgrade -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew"
 apt-get -y autoremove
 apt-get autoclean
